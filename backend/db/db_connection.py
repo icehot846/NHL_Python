@@ -1,4 +1,4 @@
-from backend.db.db_config import create_connection
+from db_config import create_connection
 
 def execute_query(query, values=None):
     """
@@ -47,3 +47,15 @@ def fetch_query(query, values=None):
     finally:
         cursor.close()
         connection.close()
+
+#Example
+# 🔍 Test Fetch
+if __name__ == "__main__":
+    print("🔍 Testing Data Retrieval...")
+
+    select_query = "SELECT * FROM scraped_data;"
+    data = fetch_query(select_query)
+
+    print("📊 Data from MySQL:")
+    for row in data:
+        print(row)
