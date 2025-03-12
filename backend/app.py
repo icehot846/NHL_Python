@@ -1,14 +1,20 @@
-from flask import Flask
+from flask import Flask, jsonify
 from flask_cors import CORS
-from api.players import players_blueprint
-from api.teams import teams_blueprint
+from api.teams import teams_bp
 
 app = Flask(__name__)
-CORS(app)  # Enable Cross-Origin Requests for frontend access
+CORS(app)
 
-# Register Blueprints (Modular API Routes)
-app.register_blueprint(players_blueprint, url_prefix='/players')
-app.register_blueprint(teams_blueprint, url_prefix='/teams')
+# Prevent caching for API responses
+@app.after_request
+def add_cache_headers(response):
+    response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
+    response.headers["Pragma"] = "no-cache"
+    response.headers["Expires"] = "0"
+    return response
+
+# Register Blueprints
+app.register_blueprint(teams_bp, url_prefix='/api/teams')
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, port=5000)
