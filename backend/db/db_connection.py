@@ -1,5 +1,5 @@
 import mysql.connector  # Ensure this is imported
-from .db_config import DB_CONFIG  # Import database config
+from db.db_config import DB_CONFIG  # Import database config
 
 def get_db_connection():
     """Establish and return a MySQL database connection."""
