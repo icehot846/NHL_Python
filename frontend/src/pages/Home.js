@@ -8,8 +8,7 @@ function Home() {
     return (
         <div className="hero">
             <h1>Welcome to NHL Stats</h1>
-            <p>Explore real-time stats across all NHL teams and players.</p>
-            <image "url" 
+            <p>Explore real-time stats across all NHL teams and players.</p> 
             <button onClick={() => navigate("/teams")}>Explore Teams</button>
         </div>
       
