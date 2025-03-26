@@ -1,15 +1,17 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import './Home.css';
 
 function Home() {
     const navigate = useNavigate(); // ✅ useNavigate inside a functional component
 
     return (
-        <div className="container">
+        <div className="hero">
             <h1>Welcome to NHL Stats</h1>
-            <p>Explore team and player statistics for the current season.</p>
-            <button onClick={() => navigate("/teams")}>View Teams</button>
+            <p>Explore real-time stats across all NHL teams and players.</p>
+            <button onClick={() => navigate("/teams")}>Explore Teams</button>
         </div>
+      
     );
 }
 
