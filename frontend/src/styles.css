@@ -1,65 +1,96 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+/* === GLOBAL THEME: HOCKEY STYLE === */
+:root {
+    --primary-color: #002244;       /* Deep blue (ice rink boards / NHL branding) */
+    --secondary-color: #ffffff;     /* Clean ice white */
+    --accent-color: #c8102e;        /* Red (goal light, sticks, etc) */
+    --text-color: #f0f0f0;
+    --bg-color: #101820;            /* Dark background for contrast */
+    --card-bg: #1b1f2a;
+    --font-family: 'Segoe UI', 'Roboto', sans-serif;
+  }
+  
+  /* === BASE LAYOUT === */
+  body {
     margin: 0;
-    padding: 0;
-}
-
-h1, h2 {
-    text-align: center;
-    color: #333;
-}
-
-.container {
-    width: 90%;
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+  }
+  
+  a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+  }
+  
+  a:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
+  }
+  
+  /* === HEADINGS === */
+  h1, h2, h3, h4 {
+    font-weight: 700;
+    color: var(--secondary-color);
+  }
+  
+  h1 {
+    font-size: 3rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
+  }
+  
+  /* === GLOBAL CONTAINER === */
+  .container {
     max-width: 1200px;
-    margin: 20px auto;
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-table, th, td {
-    border: 1px solid #ddd;
-}
-
-th, td {
-    padding: 10px;
-    text-align: center;
-}
-
-th {
-    background-color: #007bff;
-    color: white;
-}
-
-td {
-    background-color: #f9f9f9;
-}
-
-tr:nth-child(even) td {
-    background-color: #e9e9e9;
-}
-
-button {
-    display: block;
-    margin: 20px auto;
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #007bff;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  /* === BUTTONS === */
+  button {
+    padding: 0.75rem 1.5rem;
+    background-color: var(--accent-color);
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
+    font-weight: bold;
+    transition: background 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #a60d1e;
+  }
+  
+  /* === CARD COMPONENT === */
+  .card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  }
+  
+  /* === NAVBAR SHARED STYLING (if any) === */
+  .navbar {
+    background-color: var(--primary-color);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .navbar a {
+    color: var(--text-color);
+    margin: 0 1rem;
+    font-weight: 600;
+  }
+  
+  .navbar a:hover {
+    color: var(--accent-color);
+  }
+  
