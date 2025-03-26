@@ -14,7 +14,7 @@ function Teams() {
             try {
                 const data = await fetchTeams();
                 console.log("API Response:", data); // Debugging log
-                alert(`API Response: ${JSON.stringify(data)}`); // Show an alert with API response
+                // alert(`API Response: ${JSON.stringify(data)}`); // Show an alert with API response
                 if (!data || data.length === 0) {
                     throw new Error("No teams found.");
                 }
