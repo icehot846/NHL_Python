@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchTeamDetails } from "../services/api";
+import teamNameMap from "../utils/teamNames";
 
 function TeamDetail() {
     const { teamAbbr } = useParams();
@@ -21,7 +22,11 @@ function TeamDetail() {
 
     return (
         <div>
-            <h1>{teamData.team.name} ({teamData.team.abbreviation})</h1>
+            <h1>
+                {teamNameMap[teamData.team.abbreviation] || teamData.team.name}
+                {" "}
+                ({teamData.team.abbreviation})
+            </h1>
             <h2>Players</h2>
             <table>
                 <thead>
