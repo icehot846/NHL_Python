@@ -9,6 +9,7 @@ function Home() {
         <div className="hero">
             <h1>Welcome to NHL Stats</h1>
             <p>Explore real-time stats across all NHL teams and players.</p>
+            <image "url" 
             <button onClick={() => navigate("/teams")}>Explore Teams</button>
         </div>
       

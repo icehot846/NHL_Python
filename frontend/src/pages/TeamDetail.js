@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchTeamDetails } from "../services/api";
 import teamNameMap from "../utils/teamNames";
+import logoMap from "../assets/logoMap";
+
 
 function TeamDetail() {
     const { teamAbbr } = useParams();
@@ -21,7 +23,12 @@ function TeamDetail() {
     if (!teamData) return <p>Team not found.</p>;
 
     return (
-        <div>
+        <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+            <img
+                src={logoMap[teamData.team.abbreviation]}
+                alt={`${teamData.team.name} logo`}
+                style={{ width: "60px", height: "60px" }}
+            />
             <h1>
                 {teamNameMap[teamData.team.abbreviation] || teamData.team.name}
                 {" "}
