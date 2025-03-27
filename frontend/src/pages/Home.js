@@ -48,9 +48,9 @@ function Home() {
           <div className="player-grid">
             {topScorers.map((player) => (
               <div className="player-card" key={player.id}>
-                <img src={player.headshot} alt={`${player.firstName.default} ${player.lastName.default}`} />
+                <img src={player.headshot} alt={`${player.firstName} ${player.lastName}`} />
                 <div>
-                  <h4>{player.firstName.default} {player.lastName.default}</h4>
+                  <h4>{player.firstName} {player.lastName}</h4>
                   <p>{player.position} | {player.teamAbbrev}</p>
                   <p>Goals: {player.value}</p>
                 </div>
@@ -65,9 +65,9 @@ function Home() {
           <div className="player-grid">
             {topGoalies.map((goalie) => (
               <div className="player-card" key={goalie.id}>
-                <img src={goalie.headshot} alt={`${goalie.firstName.default} ${goalie.lastName.default}`} />
+                <img src={goalie.headshot} alt={`${goalie.firstName} ${goalie.lastName}`} />
                 <div>
-                  <h4>{goalie.firstName.default} {goalie.lastName.default}</h4>
+                  <h4>{goalie.firstName} {goalie.lastName}</h4>
                   <p>{goalie.position} | {goalie.teamAbbrev}</p>
                   <p>Wins: {goalie.value}</p>
                 </div>
