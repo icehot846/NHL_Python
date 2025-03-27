@@ -47,11 +47,11 @@ function Home() {
           <h2>🏒 Top 5 Goal Scorers</h2>
           <div className="player-grid">
             {topScorers.map((player) => (
-              <div className="player-card" key={player.player.id}>
-                <img src={player.headshot} alt={`${player.firstName} ${player.lastName}`} />
-                <h4>{player.firstName} {player.lastName}</h4>
-                <p>{player.position} | {player.teamAbbrev}</p>
-                <p>Goals: {player.value}</p>
+              <div className="player-card" key={player.player_id}>
+                <img src={player.headshot} alt={`${player.first_name} ${player.last_name}`} />
+                <h4>{player.first_name} {player.last_name}</h4>
+                <p>{player.position} | {player.team_abbr}</p>
+                <p>Goals: {player.goals}</p>
               </div>
             ))}
           </div>
@@ -63,10 +63,10 @@ function Home() {
           <div className="player-grid">
             {topGoalies.map((goalie) => (
               <div className="player-card" key={goalie.player_id}>
-                <img src={goalie.headshot} alt={`${goalie.firstName} ${goalie.lastName}`} />
-                <h4>{goalie.firstName} {goalie.lastName}</h4>
-                <p>{goalie.position} | {goalie.teamAbbrev}</p>
-                <p>Wins: {goalie.value}</p>
+                <img src={goalie.headshot} alt={`${goalie.first_name} ${goalie.last_name}`} />
+                <h4>{goalie.first_name} {goalie.last_name}</h4>
+                <p>{goalie.position} | {goalie.team_abbr}</p>
+                <p>Wins: {goalie.wins}</p>
               </div>
             ))}
           </div>
@@ -77,5 +77,6 @@ function Home() {
 }
 
 export default Home;
+
 
 
