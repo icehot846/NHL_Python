@@ -32,3 +32,15 @@
     background: #f0f0f0;
   }
   
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .hero-logo {
+    width: 100px;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+  
