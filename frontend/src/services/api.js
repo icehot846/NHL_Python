@@ -25,3 +25,13 @@ export const fetchTeamDetails = async (teamAbbr) => {
         return null;
     }
 };
+
+export const fetchTopScorers = async () => {
+    const response = await fetch(`${BASE_URL}/skater-stats-leaders/current`);
+    return response.json();
+  };
+  
+  export const fetchTopGoalies = async () => {
+    const response = await fetch(`${BASE_URL}/goalie-stats-leaders/current`);
+    return response.json();
+  };
