@@ -49,11 +49,9 @@ function Home() {
             {topScorers.map((player) => (
               <div className="player-card" key={player.id}>
                 <img src={player.headshot} alt={`${player.firstName} ${player.lastName}`} />
-                <div>
-                  <h4>{player.firstName} {player.lastName}</h4>
-                  <p>{player.position} | {player.teamAbbrev}</p>
-                  <p>Goals: {player.value}</p>
-                </div>
+                <h4>{player.firstName} {player.lastName}</h4>
+                <p>{player.position} | {player.teamAbbrev}</p>
+                <p>Goals: {player.value}</p>
               </div>
             ))}
           </div>
@@ -66,11 +64,9 @@ function Home() {
             {topGoalies.map((goalie) => (
               <div className="player-card" key={goalie.id}>
                 <img src={goalie.headshot} alt={`${goalie.firstName} ${goalie.lastName}`} />
-                <div>
-                  <h4>{goalie.firstName} {goalie.lastName}</h4>
-                  <p>{goalie.position} | {goalie.teamAbbrev}</p>
-                  <p>Wins: {goalie.value}</p>
-                </div>
+                <h4>{goalie.firstName} {goalie.lastName}</h4>
+                <p>{goalie.position} | {goalie.teamAbbrev}</p>
+                <p>Wins: {goalie.value}</p>
               </div>
             ))}
           </div>
