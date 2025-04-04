@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { fetchTopScorers, fetchTopGoalies } from "../services/api";
+import BasePlayerContainer from "../components/BasePlayerContainer/BasePlayerContainer";
 import "./Home.css";
 
 function Home() {
@@ -39,39 +40,11 @@ function Home() {
           <button onClick={() => navigate("/teams")}>Explore Teams</button>
         </div>
       </div>
-
       {/* Stats Section */}
-      <div className="stats-section">
-        {/* Top Scorers */}
-        <div className="card">
-          <h2>🏒 Top 5 Goal Scorers</h2>
-          <div className="player-grid">
-            {topScorers.map((player) => (
-              <div className="player-card" key={player.player_id}>
-                <img src={player.headshot} alt={`${player.first_name} ${player.last_name}`} />
-                <h4>{player.first_name} {player.last_name}</h4>
-                <p>{player.position} | {player.team_abbr}</p>
-                <p>Goals: {player.goals}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Top Goalies */}
-        <div className="card">
-          <h2>🥅 Top 5 Goalies (Wins)</h2>
-          <div className="player-grid">
-            {topGoalies.map((goalie) => (
-              <div className="player-card" key={goalie.player_id}>
-                <img src={goalie.headshot} alt={`${goalie.first_name} ${goalie.last_name}`} />
-                <h4>{goalie.first_name} {goalie.last_name}</h4>
-                <p>{goalie.position} | {goalie.team_abbr}</p>
-                <p>Wins: {goalie.wins}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
+      {/* You can see that this makes your Home page a lot more manageable.
+      And if you need to update the cards/container, you can do it in one place */}
+      <BasePlayerContainer players={topScorers} />
+      <BasePlayerContainer players={topGoalies} isGoalies={true}/>
     </div>
   );
 }
