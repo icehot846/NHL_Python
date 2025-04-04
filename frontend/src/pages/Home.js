@@ -43,8 +43,8 @@ function Home() {
       {/* Stats Section */}
       {/* You can see that this makes your Home page a lot more manageable.
       And if you need to update the cards/container, you can do it in one place */}
-      <BasePlayerContainer players={topScorers} />
-      <BasePlayerContainer players={topGoalies} isGoalies={true}/>
+      <BasePlayerContainer players={topScorers} title={"🏒 Top 5 Goal Scorers"}/>
+      <BasePlayerContainer players={topGoalies} title={"🥅 Top 5 Goalies (Wins)"} isGoalies={true}/>
     </div>
   );
 }
