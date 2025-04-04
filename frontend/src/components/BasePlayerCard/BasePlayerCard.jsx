@@ -1,4 +1,5 @@
 import React from "react";
+import "./BasePlayerCard.css";
 
 const BasePlayerCard = ({ player, isGoalie }) => {
   return (
