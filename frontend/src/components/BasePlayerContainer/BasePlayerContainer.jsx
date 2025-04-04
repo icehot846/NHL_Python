@@ -6,7 +6,7 @@ const BasePlayerContainer = ({ players, isGoalies = false, title }) => {
   // but for now this will work 
   return (
     <div className="c-player-card-container">
-      <h2>{{ title }}</h2>
+      <h2>{ title }</h2>
       <div className="c-player-grid">
         {players.map((player) => (
           <BasePlayerCard key={player.player_id} player={player} isGoalie={isGoalies} />
