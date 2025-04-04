@@ -2,7 +2,7 @@ import React from "react";
 
 const BasePlayerCard = ({ player, isGoalie }) => {
   return (
-    <div className="player-card" key={player.player_id}>
+    <div className="player-card">
       <img
         src={player.headshot}
         alt={`${player.first_name} ${player.last_name}`}
