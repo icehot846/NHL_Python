@@ -1,5 +1,6 @@
 import React from "react";
 import BasePlayerCard from "../BasePlayerCard/BasePlayerCard";
+import "./BasePlayerContainer.css";
 
 const BasePlayerContainer = ({ players, isGoalies = false, title }) => {
   // there is probably a better way to figure out if it is a goalie or not, 
